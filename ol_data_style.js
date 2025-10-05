@@ -166,7 +166,7 @@ const styleRules_prescri_surf = [
   },
     {
     label: 'Bâtiment pouvant changer de destination',
-    condition: f => f.get('libelle')?.startsWith('bati_chang_desti'),
+    condition: f => f.get('libelle') === 'bati_chang_desti',
     stroke: '#a909da',
     fill: { color: '#a909da' }
   },
@@ -428,3 +428,4 @@ const styleFunction_points = (feature) => {
     })
   });
 };
+
