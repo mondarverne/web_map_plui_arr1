@@ -9,6 +9,26 @@
 }
 
 
+.ol-popup{
+  color: black;
+}
+
+.ol-popup.default .anchor {
+  color: #f39200
+}
+
+.ol-popup.default > div {
+  background-color: #fff;
+  border: 2px solid #f39200;
+  border-radius: 5px;
+}
+
+.ol-popup .closeBox {
+  background-color:#f39200;
+  color: #fff;
+}
+
+
 .ol-legend > canvas {
   float: left;
 }
