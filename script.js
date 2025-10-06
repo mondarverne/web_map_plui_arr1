@@ -125,6 +125,35 @@ var map = new ol.Map({
 
 
 
+// Control Select 
+ // --- Création de la popup ol-ext ---
+const popup = new ol.Overlay.Popup({
+  popupClass: "default",
+  closeBox: true,
+  positioning: "auto",
+  autoPan: false,
+  onclose: () => console.log("Popup fermée")
+});
+map.addOverlay(popup);
+
+
+
+// --- Gestion du clic sur la carte ---
+map.on('singleclick', function (evt) {
+  const coord = evt.coordinate;
+
+  const feature = map.forEachFeatureAtPixel(evt.pixel, (feat, layer) => {
+    return layer === layer_zonage ? feat : null;
+  });
+
+  if (feature) {
+    const nom = feature.get('libelong');
+    popup.show(coord, `<strong>${nom}</strong>`);
+  } else {
+    popup.hide();
+  }
+});
+
 var legend = new ol.legend.Legend({ 
   title: 'Légende',
   margin: 5,
@@ -382,4 +411,5 @@ selectNumero.addEventListener("change", () => {
           }
         }
 });
+
 init();
