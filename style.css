@@ -119,6 +119,11 @@ p {
   background-color:   rgba(129, 129, 129, 0.3);
 }
 
+.layer-switcher {
+  position: absolute;
+  top: .5em;
+  right: .5em;
+}
 
 .layer-switcher button {
   float: right;
